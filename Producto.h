@@ -1,4 +1,4 @@
-//Clase Producto        PI
+//Clase Producto                 PI
 
 #ifndef PRODUCTO_H
 #define PRODUCTO_H
