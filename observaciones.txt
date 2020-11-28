@@ -1,0 +1,8 @@
+*****************/Implementación de la clase Registro/*********************
+
+1.  Metodos consulta_id /consulta_precio etc. estan mezclados con una idea tipo get, y display. Muestra en la terminal el valor y lo regresa.
+Podría resultar incómodo que muestre cuando solo se requiere regresar. 
+Se podría agregar un parámetro binario predeterminado a true, de manera que le podamos pedir que solo regrese y no muestre en la terminal cuando se requiera.
+(por predeterminado regresa)
+
+2.  Misma idea para la incialización de clases.
