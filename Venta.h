@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 #include "Producto.h"
-//#include "Calculadora.h"
+#include "Calculadora.h"
 using namespace std;
 
 class Venta{
@@ -84,12 +84,12 @@ class Venta{
         return total;
     }
 
-    /* ****************Definir clase calculadora*************
+    
     float calcular_total(Calculadora calc){
         total = calc.calculo(carrito);
         return total;
     }
-    */
+    
 };
 
 #endif
