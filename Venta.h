@@ -63,24 +63,24 @@ class Venta{
             }  
         }
     }
-    string mostrar_cliente(){
-        cout<<"------------------------"<<endl;
+    string mostrar_cliente(bool verbose= true){
+        if (verbose){cout<<"------------------------"<<endl;
         cout<<"Cliente: "+cliente<< endl;
-        cout<<"------------------------"<<endl;
+        cout<<"------------------------"<<endl;}
         return cliente;
     }
 
-    string mostrar_Tcliente(){
-        cout<<"------------------------"<<endl;
+    string mostrar_Tcliente(bool verbose = true){
+        if (verbose) {cout<<"------------------------"<<endl;
         cout<<"Tipo de cliente: "+tipo_cliente<< endl;
-        cout<<"------------------------"<<endl;
+        cout<<"------------------------"<<endl;}
         return tipo_cliente;
     }
 
-    float mostrar_total(){
-        cout<<"------------------------"<<endl;
+    float mostrar_total(bool verbose = true){
+        if (verbose){cout<<"------------------------"<<endl;
         cout<<"Total de venta: "+to_string(total)<< endl;
-        cout<<"------------------------"<<endl;
+        cout<<"------------------------"<<endl;}
         return total;
     }
 

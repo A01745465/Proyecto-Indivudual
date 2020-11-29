@@ -37,19 +37,20 @@ class Producto{
         }
     }
 
-    float consulta_precio(){
-        cout<<"------------------------\n+\n+"<<endl;
+    float consulta_precio(bool verbose = true){
+        if (verbose){cout<<"------------------------\n+\n+"<<endl;
         cout<<"Producto: "+nombre<< endl;
         cout<<"Precio: "+to_string(precio)<< endl;
-        cout<<"+\n+\n------------------------"<<endl;
+        cout<<"+\n+\n------------------------"<<endl;}
         return precio;
     }
 
-    string consulta_id (){
-        cout<<"------------------------\n+\n+"<<endl;
+    string consulta_id (bool verbose =true){
+        if (verbose){cout<<"------------------------\n+\n+"<<endl;
         cout<<"Producto: "+nombre<< endl;
         cout<<"ID: "+id<< endl;
-        cout<<"+\n+\n------------------------"<<endl;
+        cout<<"+\n+\n------------------------"<<endl;}
+        
         return id;
     }
 };

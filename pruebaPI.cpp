@@ -20,6 +20,7 @@ int main(){
     prod1.cambiar_precio("pass",25.5);
     prod1.consulta_precio();
     
+    
     cout<<"CLASE VENTA"<< endl;
     Producto prod2{"Agua","H2O0",10};
 
