@@ -1,4 +1,4 @@
-//Clase Producto        PI
+//Clase Calculadora        PI
 
 #ifndef CALCULADORA_H
 #define CALCULADORA_H
@@ -28,36 +28,66 @@ class Calculadora{
     }
     void modificar_desc_empleado(float desc, string pass){
         
-        if (pass=="pass"){
+        if( ((pass=="pass") && (desc < .99))) {
             desc_empleado = desc;
             cout<< "El nuevo descuento ha sido establecido"<< endl;
             
 
         }
-        else if ()
+        else if (pass != "pass")
         {
             cout<< "Error, contrasena incorrecta."<< endl;
         }
+         else if (desc > 1)
         {
-            cout<< "Error, contrasena incorrecta."<< endl;
+            cout<< "Error, no se puede establecer ese descuento."<< endl;
         }
+        
     }
     void modificar_desc_extra(float desc, string pass){
 
-        if (pass=="pass"){
+        if ((pass=="pass") && (desc < .99) ) {
             descuento_extra = desc;
             cout<< "El nuevo descuento ha sido establecido"<< endl;
-            
 
         }
-        else{
+        else if (pass != "pass")
+        {
             cout<< "Error, contrasena incorrecta."<< endl;
         }
-    }
-    float calculo(vector<Producto>carrito){
+        else if (desc > 1)
+        {
+            cout<< "Error, no se puede establecer ese descuento."<< endl;
+        }
         
-
+        
+    
     }
+    float calculo(vector<Producto>carrito,float suma,float desc){
+        suma = 0;
+        desc = 0;
+        
+         for(size_t i = 0; i<carrito.size(); i++){
+             
+            suma = 0 + carrito[i].consulta_precio();
+         }
+         
+
+         if (bool empleado = false ){
+             suma = suma;
+         } 
+         if (bool empleado = true){
+             desc = desc_empleado + descuento_extra;
+             desc = suma * desc;
+             suma = suma - desc;
+             
+         }
+         return suma;
+
+        }
+       
+
+    
 
 
     
