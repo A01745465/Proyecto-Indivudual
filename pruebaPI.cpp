@@ -3,6 +3,7 @@
 #include "Producto.h"
 #include "Venta.h"
 #include "Registro.h"
+#include "Calculadora.h"
 
 int main(){
 
@@ -81,6 +82,19 @@ int main(){
     r1.mostrar_R_ventas();
 
 
+    cout<< "CLASE CALCULADORA"<< endl;
     
+    Calculadora calc1{.15,true,0.1};
+    venta2.calcular_total(calc1);
 
+    venta2.mostrar_total();
+    
+    calc1.modificar_desc_empleado(15,"contra");
+    calc1.modificar_desc_empleado(0.1,"pass");
+
+    calc1.modificar_desc_extra(15,"contra");
+    calc1.modificar_desc_extra(0.1,"pass");
+
+    venta2.calcular_total(calc1);
+    venta2.mostrar_total();
 }

@@ -11,89 +11,59 @@ using namespace std;
 class Calculadora{
     float desc_empleado;
     bool empleado;
-    float descuento_extra;
+    float desc_extra;
     public:
     
 
-    Calculadora(float desc_empleado, bool empleado ,float descuento_extra){
-        empleado = empleado;
-        desc_empleado = .15;
-        descuento_extra = .0;
+    Calculadora(float descuento_empleado = .15, bool empl = false ,float descuento_extra= 0): desc_empleado{descuento_empleado}, empleado{empl}, desc_extra{descuento_extra} {
         cout<<"------------------------\n+\n+"<<endl;
-        cout<<"Empleado: " + empleado<< endl;
-        cout<<"Descuento de empleado: " + to_string(desc_empleado) + "del total"<< endl;
-        cout<<"Descuento extra: " + to_string(descuento_extra)+ "del total" << endl;
+        if (empleado){cout<<"Empleado"<< endl;}
+        else{cout<< "Externo"<<endl;}
+        cout<<"Descuento de empleado: " + to_string(desc_empleado) + " del total"<< endl;
+        cout<<"Descuento extra: " + to_string(desc_extra)+ " del total" << endl;
         cout<<"+\n+\n------------------------"<<endl;
-        cout<<""<< endl;
     }
+
     void modificar_desc_empleado(float desc, string pass){
         
         if( ((pass=="pass") && (desc < .99))) {
             desc_empleado = desc;
             cout<< "El nuevo descuento ha sido establecido"<< endl;
-            
-
         }
-        else if (pass != "pass")
+        if (pass != "pass")
         {
             cout<< "Error, contrasena incorrecta."<< endl;
         }
-         else if (desc > 1)
+        if (desc > 1)
         {
             cout<< "Error, no se puede establecer ese descuento."<< endl;
         }
-        
     }
+
     void modificar_desc_extra(float desc, string pass){
-
         if ((pass=="pass") && (desc < .99) ) {
-            descuento_extra = desc;
+            desc_extra = desc;
             cout<< "El nuevo descuento ha sido establecido"<< endl;
-
         }
-        else if (pass != "pass")
+        if (pass != "pass")
         {
             cout<< "Error, contrasena incorrecta."<< endl;
         }
-        else if (desc > 1)
+        if (desc > 1)
         {
             cout<< "Error, no se puede establecer ese descuento."<< endl;
         }
-        
-        
-    
     }
-    float calculo(vector<Producto>carrito,float suma,float desc){
-        suma = 0;
-        desc = 0;
-        
+
+    float calculo(vector<Producto>carrito){
+        float suma = 0;
          for(size_t i = 0; i<carrito.size(); i++){
-             
-            suma = 0 + carrito[i].consulta_precio();
+            suma = suma + carrito[i].consulta_precio(false);
          }
-         
-
-         if (bool empleado = false ){
-             suma = suma;
+         if (empleado){
+             suma = suma*(1-(desc_empleado+desc_extra));
          } 
-         if (bool empleado = true){
-             desc = desc_empleado + descuento_extra;
-             desc = suma * desc;
-             suma = suma - desc;
-             
-         }
          return suma;
-
         }
-       
-
-    
-
-
-    
-
-    
-
 };
-
 #endif
