@@ -15,10 +15,8 @@ class Calculadora{
     public:
     
 
-    Calculadora(float descuento_empleado = .15, bool empl = false ,float descuento_extra= 0): desc_empleado{descuento_empleado}, empleado{empl}, desc_extra{descuento_extra} {
+    Calculadora(float descuento_empleado = .15,float descuento_extra= 0): desc_empleado{descuento_empleado},empleado{false}, desc_extra{descuento_extra} {
         cout<<"------------------------\n+\n+"<<endl;
-        if (empleado){cout<<"Empleado"<< endl;}
-        else{cout<< "Externo"<<endl;}
         cout<<"Descuento de empleado: " + to_string(desc_empleado) + " del total"<< endl;
         cout<<"Descuento extra: " + to_string(desc_extra)+ " del total" << endl;
         cout<<"+\n+\n------------------------"<<endl;
@@ -55,7 +53,13 @@ class Calculadora{
         }
     }
 
-    float calculo(vector<Producto>carrito){
+    float calculo(vector<Producto>carrito, string empl){
+        if (empl == "empleado"){
+            empleado = true;
+        }else {
+            empleado = false;
+        }
+
         float suma = 0;
          for(size_t i = 0; i<carrito.size(); i++){
             suma = suma + carrito[i].consulta_precio(false);

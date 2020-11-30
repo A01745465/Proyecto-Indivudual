@@ -86,7 +86,7 @@ class Venta{
 
     
     float calcular_total(Calculadora calc){
-        total = calc.calculo(carrito);
+        total = calc.calculo(carrito, tipo_cliente);
         return total;
     }
     

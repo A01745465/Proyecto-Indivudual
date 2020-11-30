@@ -84,17 +84,25 @@ int main(){
 
     cout<< "CLASE CALCULADORA"<< endl;
     
-    Calculadora calc1{.15,true,0.1};
+    cout<< "INICIALIZACION" << endl;
+
+    Calculadora calc1{.15,0.1};
     venta2.calcular_total(calc1);
 
     venta2.mostrar_total();
     
+
+    cout<<"PRUEBAS MODIFICAR_DESC_EMPLEADO"<< endl;
     calc1.modificar_desc_empleado(15,"contra");
     calc1.modificar_desc_empleado(0.1,"pass");
 
+
+    cout<<"PRUEBAS MODIFICAR DESC_EXTRA"<< endl;
     calc1.modificar_desc_extra(15,"contra");
     calc1.modificar_desc_extra(0.1,"pass");
 
+    cout<<"CALCULO DE TOTAL A TRAVES DE VENTA"<< endl;
     venta2.calcular_total(calc1);
     venta2.mostrar_total();
+
 }
