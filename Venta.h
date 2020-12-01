@@ -70,7 +70,7 @@ class Venta{
             }  
         }
     }
-    string mostrar_cliente(bool verbose= true){
+    string mostrar_cliente(bool verbose = true){
         if (verbose){cout<<"------------------------"<<endl;
         cout<<"Cliente: "+cliente<< endl;
         cout<<"------------------------"<<endl;}
