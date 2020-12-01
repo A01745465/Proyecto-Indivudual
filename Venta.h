@@ -19,7 +19,7 @@ class Venta{
     vector <Producto> carrito;
 
     Venta(string t_cliente, string cl){
-        if ((t_cliente == "empleado") || (tipo_cliente == "externo")) {
+        if ((t_cliente == "empleado") || (t_cliente == "externo")) {
         tipo_cliente = t_cliente;
         cliente = cl;
         total = 0;
