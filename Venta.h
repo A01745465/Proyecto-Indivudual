@@ -19,6 +19,7 @@ class Venta{
     vector <Producto> carrito;
 
     Venta(string t_cliente, string cl){
+        if ((t_cliente == "empleado") || (tipo_cliente == "externo")) {
         tipo_cliente = t_cliente;
         cliente = cl;
         total = 0;
@@ -27,7 +28,13 @@ class Venta{
         cout<<"Tipo de cliente: "+tipo_cliente<< endl;
         cout<<"Cliente: "+cliente<< endl;
         cout<<"+\n------------------------"<<endl;
-        cout<<"Venta:\nCliente registrado exitosamente!"<< endl; 
+        cout<<"Venta:\nCliente registrado exitosamente!"<< endl; }
+
+        else{
+            cout<< "Tipo de cliente incorrecto, debe de ingresar  \"empleado\" o \"externo\""<<endl;
+            cout<<"El registro no se ha llevado a cabo, intentelo de nuevo"<<endl;
+            cout<<"+\n------------------------"<<endl;
+        }
 
     }
 
